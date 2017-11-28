@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+	"name": "Hide Element",
+	"description": "Context menu to hide element on click",
+	"version": "0.1",
+
+	"background": {
+		"scripts": ["background.js"]
+	},
+
+	"permissions": [
+		"contextMenus",
+		"activeTab"
+	],
+
+	"content_scripts": [
+		{
+			"matches":["*://*/*"],
+			"js":["content.js"],
+			"css":["content.css"]
+		}
+	]
+}
