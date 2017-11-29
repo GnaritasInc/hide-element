@@ -1,3 +1,4 @@
+window.browser = window.browser || window.chrome;
 function showElements () {
     browser.tabs.executeScript({
         code: "document.querySelectorAll('.gn-hidden').forEach(function (elem) {elem.className = elem.className.replace('gn-hidden', '')});"

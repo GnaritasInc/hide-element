@@ -1,3 +1,4 @@
+window.browser = window.browser || window.chrome;
 var _contextNode = null;
 document.querySelector("body").addEventListener("contextmenu", function (e) {	
 	_contextNode = e.target;
