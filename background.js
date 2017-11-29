@@ -4,6 +4,12 @@ function showElements () {
     });
 }
 
+function hideElement (tab) {
+    if (tab) {
+        browser.tabs.sendMessage(tab.id, {"hideElement":true});
+    }
+}
+
 browser.contextMenus.create({
     id: "gn-hide",
     title: "Hide Element",
@@ -20,6 +26,9 @@ browser.contextMenus.onClicked.addListener(function (info, tab) {
     switch (info.menuItemId){
         case "gn-show":
             showElements();
+            break;
+        case "gn-hide":
+            hideElement(tab);
             break;
     }    
 });
